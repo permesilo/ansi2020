@@ -126,6 +126,37 @@ c++에서는 queue를 일일히 구현하지 않아도 된다. stack과 같이 �
 
 아래 코드는 c++에 미리 구현되어있는 queue라이브러리(stl) 사용해 스택을 구현한 것이다.
 ```cpp
+#include <stdio.h>
+#include <string.h>
+
+int q[10010]; //queue
+char inp[10]; //명령어를 저장하는 배열
+int num; //push ?형태로 들어오기 때문에 data를 저장하는 변수
+int main() {
+    int n;
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++) {
+        scanf("%s", inp);
+        if (strcmp(inp, "push") == 0) {//push일 때
+            scanf("%d", &num);
+            push(num);
+        }
+        else if (strcmp(inp, "pop") == 0) {
+            printf("%d\n", pop());
+        }
+        else if (strcmp(inp, "front") == 0) {
+            printf("%d\n", front());
+        }
+        else if (strcmp(inp, "back") == 0) {
+            printf("%d\n", rear());
+        }
+        else if (strcmp(inp, "size") == 0) //q의 size를 출력하기 위해 rear-front의 값을 출력
+            printf("%d\n", size());
+        else if (strcmp(inp, "empty") == 0) {
+            printf("%d\n", empty());
+        }
+    }
+}
 
 ```
 
