@@ -48,6 +48,8 @@
 ---------------------------------
 벡터는 배열과 다르게 자료를 넣을 떄 마다 공간이 늘어나기 때문에 필요한 정보만을 저장할 수 있다.
 
+(벡터에 대한 설명: )
+
 이 때는 2차원배열처럼 두 node에 해당하는 칸에 간선의 정보를 넣는 것이 아닌, 간선이 시작하는 node에 간선의 정보를 저장한다.
 
 ![그래프2](https://mblogthumb-phinf.pstatic.net/MjAxNzAxMzFfMTAy/MDAxNDg1ODQzNTU5NTYw.emxOr6a5-YI-IqPFG4pMWFzylg-Y3aFc0gvD2bdxvXIg.HiAfnWGkn_4jH5d5O2MpKeGbU5_FNJr6lLebEdRTYS4g.JPEG.occidere/image_5867957401485829917305.jpg?type=w800)
