@@ -36,7 +36,7 @@
 
 단, 가중치가 존재할 경우에는 1대신 가중치를 넣어주면 된다.
 
-![그래프2] (https://m.blog.naver.com/occidere/220923695595?view=img_2)
+![그래프2](https://m.blog.naver.com/occidere/220923695595?view=img_2)
 
 출처: https://m.blog.naver.com/occidere/220923695595
 
