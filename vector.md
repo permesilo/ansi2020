@@ -15,6 +15,7 @@
 
 c++에서 사용하기 때문에 stack과 queue처럼 ```using namespace std;```를 필수적으로 작성해야한다.
 
+- 기본적인 vector 선언
 ```cpp
 #include<stdio.h>
 #include<vector>
@@ -37,6 +38,7 @@ int main(){
 -v4는 초기화 리스트를 이용하여 vector에 미리 값을 넣어 만든 방법으로 v4[0]부터 v4[4]까지 각각 1~5의 수가
 저장되어있는 형태이다.
 
+-2차원 벡터 선언
 ```cpp
 #include<stdio.h>
 #include<vector>
@@ -45,11 +47,14 @@ using namespace std;
 int main(){
   int n, m;
   n = 10; m = 20;
-  vector<vector<int>> v(n, vector<int>(m));
+  vector<vector<int>> v1(n, vector<int>(m)); //첫번째 방법
+  vector<int> v2[10]; //두번째 방법
   return 0;
 }
 ```
-이 때 v은 2차원 배열인 ```int v[n][m]```과 같은 크기이다.
+-이 때 v1은 2차원 배열인 ```int v1[n][m]```과 같은 크기이다.
+
+-v2는 세로(열)의 크기는 n과 같지만 가로(행)의 크기는 미리 지정할 수는 없다.
 
 3 vector의 활용
 ---------------------------------
