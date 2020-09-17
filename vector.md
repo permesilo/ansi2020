@@ -15,7 +15,7 @@
 
 c++에서 사용하기 때문에 stack과 queue처럼 ```using namespace std;```를 필수적으로 작성해야한다.
 
-**- 기본적인 vector 선언**
+**2.1 기본적인 vector 선언**
 ```cpp
 #include<stdio.h>
 #include<vector>
@@ -38,7 +38,7 @@ int main(){
 -v4는 초기화 리스트를 이용하여 vector에 미리 값을 넣어 만든 방법으로 v4[0]부터 v4[4]까지 각각 1~5의 수가
 저장되어있는 형태이다.
 
-**- 2차원 벡터 선언**
+**2.2 2차원 벡터 선언**
 ```cpp
 #include<stdio.h>
 #include<vector>
@@ -58,7 +58,7 @@ int main(){
 
 3 vector의 활용
 ---------------------------------
-**- 벡터에 값 저장 및 삭제**
+**3.1 벡터에 값 저장 및 삭제**
 ```cpp
 #include<stdio.h>
 #include<vector>
@@ -89,7 +89,7 @@ int main(){
 0이 저장된다.
 
 
-**- 벡터의 크기를 구하는 방법**
+**3.2 벡터의 크기를 구하는 방법**
 ```cpp
 #include<stdio.h>
 #include<vector>
@@ -126,7 +126,7 @@ empty = 1
 
 실제로 벡터의 특정 원소에 접근하는 방법은 배열과 같다.
 
-**- 벡터의 특정 원소에 접근하는 방법**
+**3.3 벡터의 특정 원소에 접근하는 방법**
 ```cpp
 #include<stdio.h>
 #include<vector>
@@ -156,7 +156,7 @@ int main(){
 
 벡터의 모든 값을을 순서대로 접근할 수 있는 방법은 반복문을 사용하는 방법인데 이를 간단하게 2가지로 나눌 수 있다.
 
-**- for문 사용**
+**3.4 for문 사용**
 ```cpp
 #include<stdio.h>
 #include<vector>
@@ -177,7 +177,7 @@ int main(){
 
 -따라서 어떠한 형식의 for문을 사용해도 상관없지만, 앞으로는 기존의 for문 형식과 같은 첫번째 for문과 같은 형식으로 설명하도록 하겠다.
 
-**- insert와 erase하는 법**
+**3.5 insert와 erase하는 법**
 ```cpp
 #include<stdio.h>
 #include<vector>
@@ -227,7 +227,7 @@ int main(){
 4 10 20 0 0 0 0 0 1 2 999 3 4 5
 ```
 
-**- begin, end함수**
+**3.6 begin, end함수**
 ```cpp
 #include<stdio.h>
 #include<vector>
