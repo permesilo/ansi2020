@@ -15,7 +15,7 @@
 
 c++에서 사용하기 때문에 stack과 queue처럼 ```using namespace std;```를 필수적으로 작성해야한다.
 
-- 기본적인 vector 선언
+**- 기본적인 vector 선언**
 ```cpp
 #include<stdio.h>
 #include<vector>
@@ -38,7 +38,7 @@ int main(){
 -v4는 초기화 리스트를 이용하여 vector에 미리 값을 넣어 만든 방법으로 v4[0]부터 v4[4]까지 각각 1~5의 수가
 저장되어있는 형태이다.
 
-- 2차원 벡터 선언
+**- 2차원 벡터 선언**
 ```cpp
 #include<stdio.h>
 #include<vector>
