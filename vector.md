@@ -53,7 +53,7 @@ int main(){
 
 3 vector의 활용
 ---------------------------------
-- 벡터에 값 저장 및 
+**- 벡터에 값 저장 및 삭제**
 ```cpp
 #include<stdio.h>
 #include<vector>
@@ -84,7 +84,7 @@ int main(){
 0이 저장된다.
 
 
-- 벡터의 크기를 구하는 방법
+**- 벡터의 크기를 구하는 방법**
 ```cpp
 #include<stdio.h>
 #include<vector>
@@ -121,7 +121,7 @@ empty = 1
 
 실제로 벡터의 특정 원소에 접근하는 방법은 배열과 같다.
 
-- 벡터의 특정 원소에 접근하는 
+**- 벡터의 특정 원소에 접근하는 방법**
 ```cpp
 #include<stdio.h>
 #include<vector>
@@ -151,7 +151,103 @@ int main(){
 
 벡터의 모든 값을을 순서대로 접근할 수 있는 방법은 반복문을 사용하는 방법인데 이를 간단하게 2가지로 나눌 수 있다.
 
+**- for문 사용**
+```cpp
+#include<stdio.h>
+#include<vector>
+using namespace std;
+int main(){
+  vector<int> a = { 1,2,3,4,5 };
+  for (int i = 0; i < a.size(); i++){
+    printf("%d ", a[i]);
+  }
+  printf("\n");
+  for (int x : a)
+    printf("%d ", x);
+  printf("\n");
+  return 0;
+}
+```
+-위에서 사용된 for문 2개는 출력결과가 동일하다
 
-4 벡터를 이용한 그래프 저장(가중치 O)
---------------------
+-따라서 어떠한 형식의 for문을 사용해도 상관없지만, 앞으로는 기존의 for문 형식과 같은 첫번째 for문과 같은 형식으로 설명하도록 하겠다.
 
+**- insert와 erase하는 법**
+```cpp
+#include<stdio.h>
+#include<vector>
+using namespace std;
+int main(){
+  vector<int> a = { 1,2,3,4,5 };
+  for (int i = 0; i < a.size(); i++){
+    printf("%d ", a[i]);
+  printf("\n");
+  a.insert(a.begin(), 4);
+  for (int i = 0; i < a.size(); i++){
+    printf("%d ", a[i]);
+  printf("\n");
+  a.insert(a.begin() + 3, 999);
+  for (int i = 0; i < a.size(); i++){
+    printf("%d ", a[i]);
+  printf("\n");
+  a.insert(a.begin() + 1, 5, 0);
+  for (int i = 0; i < a.size(); i++){
+    printf("%d ", a[i]);
+  printf("\n");
+  vector<int> b = { 10,20 };
+  a.insert(a.begin() + 1, b.begin(), b.end());
+  for (int i = 0; i < a.size(); i++){
+    printf("%d ", a[i]);
+  printf("\n");
+  return 0;
+}
+```
+
+-```insert```함수는 vector에서 원하는 곳에 값을 끼워넣을 수 있는 역할을 해주는 함수이다.
+
+-하지만 vector에서 insert함수의 시간복잡도는 O(N)이다. 이유는 중간에 삽입을 하게되면, 그 위치 뒤에 있는 모든 원소를 한칸씩 뒤로 이동시켜야하기 때문이다.
+
+-```erase(a, b)```는 vector에서 a번째부터 b번째 직전까지의 원소를 삭제한다는 의미이다.
+
+-erase함수도 insert함수와 같은 원리로 시간복잡도는 O(N)이다.
+
+-위 코드에서 ```begin()```함수는 다음 코드에서 좀더 다루도록 하겠다.
+
+-따라서 위 코드의 실행결과는 다음과 같다
+```
+1 2 3 4 5
+4 1 2 3 4 5
+4 1 2 999 3 4 5
+4 0 0 0 0 0 1 2 999 3 4 5
+4 10 20 0 0 0 0 0 1 2 999 3 4 5
+```
+
+**- begin, end함수**
+```cpp
+#include<stdio.h>
+#include<vector>
+using namespace std;
+int main(){
+  vector<int> a = { 1,2,3,4,5 };
+  a.insert(a.begin(), 4);
+  for (int i = 0; i < a.size(); i++){
+    printf("%d ", a[i]);
+  printf("\n");
+  a.erase(a.begin() + 1, a.begin() + 3);
+  for (int i = 0; i < a.size(); i++){
+    printf("%d ", a[i]);
+  printf("\n");
+  return 0;
+}
+```
+-위 코드에서 ```begin()```함수는 vector의 가장 첫 위치를 뜻한다.(저장되어있는 값이 아닌 주솟값을 의미) 
+
+-```end()```함수는 vector내에서 원소가 있는 가장 마지막 위치를 의미한다.(저장되어있는 값이 아닌 주솟값을 의미)
+
+-위 코드에서 ```a.erase(a.begin() + 1, a.begin() + 3)```은 a의 맨 앞에서 첫번째 값부터 세번째 값 직전까지 지우겠다는 의미이다.
+
+-따라서 위 코드의 결과는 다음과 같다
+```
+4 1 2 3 4 5
+4 3 4 5
+```
